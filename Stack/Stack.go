@@ -28,8 +28,9 @@ func (c *customStack) Pop() error {
 }
 
 func (c *customStack) Peek() (string, error) {
-	if len(c.stack) > 0 {
-		return c.stack[0], nil
+	len := len(c.stack)
+	if len > 0 {
+		return c.stack[len], nil
 	}
 	return "", fmt.Errorf("Peek 錯誤 stack為空")
 }
